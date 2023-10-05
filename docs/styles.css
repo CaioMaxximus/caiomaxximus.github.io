@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(230, 230, 230);
+
+}
+
+#content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#types ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#types ul li{
+    background-color: rgb(124, 97, 185);
+    display: flex;
+    min-width: 20rem;
+    min-height: 10rem;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease-in-out ;
+}
+
+#types ul li:hover{
+    background-color: rgb(209, 63, 95);
+    
+}
