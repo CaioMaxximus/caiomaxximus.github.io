@@ -1,0 +1,54 @@
+
+body{
+    background-color: var(--color3);
+}
+
+#projects_content{
+
+    display: flex;
+
+    align-items: center;
+    justify-content: end;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 auto;
+    max-height: 80vh;
+}
+
+#projects_list{
+    display: grid;
+    grid-template-columns: 1fr  ;
+    max-height: 80%;
+    width: 100%;
+}
+
+.project_container{
+    margin-top: 4rem;
+    width: 90%;
+    min-height: 10rem;
+    background-color: var(--color4);
+    border-radius: 10px;
+}
+
+
+.title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+}
+
+#presentation-header{
+    text-align: center;
+}
+
+#presentation-header h1{
+    font-size: 3rem;
+}
+
+#presentation-header p{
+    font-size: 2rem;
+
+}
+
+a{
+
+}
