@@ -1,0 +1,112 @@
+body {
+    background-color: var(--color2);
+}
+
+#projects_content {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 auto;
+    max-height: 80vh;
+
+}
+
+#projects_list {
+    position: relative;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    /* scrollbar-thumb-color: orange; */
+    display: grid;
+    grid-template-columns: 1fr;
+    max-height: 80vh;
+    position: relative;
+    width: 50%;
+}
+
+#projects_list{
+    
+       /* Firefox */
+       scrollbar-color: var(--color2) var(--color4);
+       /* Firefox */
+       scrollbar-track-color: var(--color4);
+}
+
+#projects_list::-webkit-scrollbar {
+    width: 5px;
+    visibility: hidden;
+    display: none;
+    /* Largura da barra de rolagem */
+}
+#projects_list:hover::-webkit-scrollbar{
+    display: block;
+
+}
+
+
+#projects_list::-webkit-scrollbar-track {
+    background-color: var(--color4);
+    /* Cor do track da barra de rolagem */
+}
+
+#projects_list::-webkit-scrollbar-thumb {
+    background-color: var(--color3);
+    /* Cor do thumb da barra de rolagem */
+}
+
+.project_container {
+    margin-top: 4rem;
+    width: 90%;
+    min-height: 10rem;
+    background-color: var(--color4);
+    border-radius: 10px;
+}
+
+
+.title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+}
+
+#presentation-header {
+    text-align: center;
+    color: var(--fontcolor1);
+    width: 40%;
+}
+
+#presentation-header h1 {
+    font-size: 3rem;
+}
+
+#presentation-header p {
+    font-size: 2rem;
+
+}
+
+@media (max-width: 800px) {
+
+    #projects_content{
+        flex-direction: column-reverse;
+        max-height: 100%;
+        margin-top: 15rem;
+
+    }
+
+    #presentation-header h1{
+        font-size: 2rem;
+    }
+
+    #projects_content p {
+        font-size: medium;
+    }
+
+    #projects_list{
+        width: 80%;
+    }
+    
+    .project_container{
+        width: 100%;
+    }
+}
