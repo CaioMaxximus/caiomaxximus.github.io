@@ -150,6 +150,10 @@ body{
         margin-top: 20rem;
         margin-bottom: 3rem;
     }
+    #presentation h1{
+        text-align: center;
+    }
+
     #presentation span{
         width: 100%;
     }

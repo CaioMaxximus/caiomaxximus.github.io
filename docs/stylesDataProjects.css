@@ -106,13 +106,6 @@ body {
         width: 80%;
     }
     
-
-    #projects_list::-webkit-scrollbar {
-        width: 5px;
-        visibility: visible;
-        /* Largura da barra de rolagem */
-    }
-
     .project_container{
         width: 100%;
     }
