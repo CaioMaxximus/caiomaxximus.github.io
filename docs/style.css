@@ -1,0 +1,292 @@
+/* CSS HEX */
+:root {
+--rosy-granite: #84828fff;
+--dim-grey: #6a687aff;
+--blue-slate: #536271ff;
+--charcoal-blue: #3e4c5eff;
+--deep-space-blue: #2c3d55ff;
+--white-space: #e0e6ee;
+}
+
+body{
+    background-color: var(--deep-space-blue); /* fallback mais escuro no topo */
+    background-image: linear-gradient(to bottom,
+        var(--deep-space-blue) 0%,
+        var(--charcoal-blue) 25%,
+        var(--blue-slate) 55%,
+        rgba(143, 172, 209, 0.85) 85%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--white-space);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+}
+h1{
+    font-size: 4em;
+}
+
+.content {
+    /* background-color: white; */
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding-top: 4em;
+    border-radius: 1%;
+}
+
+.main-banner{
+    /* background-color: var(--dim-grey); */
+    margin: 0 1em;
+    padding: 1em;
+    border-radius: 5px;
+    height: auto;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+
+
+
+#presentation div{
+    font-size: 1.5em;
+    text-align: left;
+    padding: 3em;
+}
+
+#links_{
+    margin-top: 2em;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+
+}
+
+#links_ .icon_link{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#banners-area{
+    max-width: 95%;
+    /* background-color: white; */
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 16rem; /* responsivo e consistente */
+    padding: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    color: var(--white-space);
+    background-color: var(--deep-space-blue);
+    box-shadow: 0 6px 18px rgba(10,14,28,0.45);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, filter .22s ease;
+    cursor: pointer; /* deixa claro que é clicável */
+    text-align: center;
+    text-decoration: none; /* caso seja um <a> */
+}
+/* efeito extra para texto dentro dos banners */
+.banner .title,
+.banner h2,
+.banner .subtitle,
+.banner p{
+    position: relative;
+    display: inline-block;
+    transform: translateY(0);
+    opacity: 1;
+    transition:
+        transform .32s cubic-bezier(.2,.8,.2,1),
+        opacity .32s ease,
+        letter-spacing .28s ease,
+        text-shadow .32s ease,
+        color .32s ease;
+    will-change: transform, opacity, text-shadow;
+}
+
+/* linha animada sob o título */
+.banner .title::after,
+.banner h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.45rem;
+    height: 3px;
+    width: 64%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(180,220,255,0.9));
+    border-radius: 2px;
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform .34s cubic-bezier(.2,.9,.25,1), opacity .24s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* estado hover/focus: texto sobe, ganha brilho e gradiente */
+.banner:hover .title,
+.banner:focus .title,
+.banner:hover h2,
+.banner:focus h2{
+    transform: translateY(-8px) scale(1.01);
+    letter-spacing: .6px;
+    text-shadow: 0 10px 30px rgba(12,18,28,0.5), 0 2px 6px rgba(60,100,140,0.18);
+    color: transparent;
+    background: linear-gradient(90deg, #f8fbff 0%, #cfe9ff 50%, #9fc8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* revelar a linha animada */
+.banner:hover .title::after,
+.banner:focus .title::after,
+.banner:hover h2::after,
+.banner:focus h2::after{
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+/* subtítulo / parágrafo: sobe com leve atraso e ganha opacidade */
+.banner .subtitle,
+.banner p{
+    transform: translateY(0);
+    opacity: .92;
+}
+.banner:hover .subtitle,
+.banner:focus .subtitle,
+.banner:hover p,
+.banner:focus p{
+    transform: translateY(-10px);
+    opacity: 1;
+    transition-delay: .04s;
+}
+
+/* pequeno efeito de brilho animado que percorre o título ao passar o mouse */
+@keyframes sweepGlow {
+    0% { filter: brightness(1); background-position: -60% 0; }
+    50% { filter: brightness(1.08); background-position: 160% 0; }
+    100% { filter: brightness(1); background-position: 260% 0; }
+}
+.banner:hover .title,
+.banner:focus .title,
+.banner:hover h2,
+.banner:focus h2{
+    background-size: 200% 100%;
+    animation: sweepGlow 1.2s ease 1;
+}
+
+/* acessibilidade: mantém efeito também quando focado por teclado */
+.banner:focus-visible .title,
+.banner:focus-visible h2{
+    outline: none;
+}
+.banner{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+/* exemplos de mapeamento: coloque os ids reais e os ficheiros corretos da pasta assets */
+#software-projects{
+    background-image:
+        linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
+        url("assets/software_banner.jpg");
+}
+#datascience-projects{
+    background-image:
+        linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
+        url("assets/data_science_banner.jpg");
+}
+#certifications{
+    background-image:
+        linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
+        url("assets/certification_banner.jpg");
+}
+#published-works{
+    background-image:
+        linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
+        url("assets/banner-contact.jpg");
+}
+
+/* mantém a imagem visível com uma camada translúcida por cima; ao passar o mouse a camada afina para tornar a imagem mais vibrante */
+.banner::before{
+    opacity: 0.75; /* controla translucidez inicial */
+    transition: background .22s ease, opacity .22s ease;
+}
+.banner:hover::before,
+.banner:focus::before{
+    opacity: 0.12; /* imagem mais visível ao hover */
+    color : black;
+}
+/* camada de overlay para melhorar legibilidade do texto e permitir efeito ao passar o mouse */
+.banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12,18,28,0.18) 0%, rgba(12,18,28,0.35) 100%);
+    transition: background .22s ease, opacity .22s ease;
+    pointer-events: none;
+}
+
+/* efeito de destaque */
+.banner:hover,
+.banner:focus{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(15,25,45,0.6);
+    filter: brightness(1.03);
+}
+
+/* suaviza overlay ao passar o mouse para deixar o conteúdo mais vibrante */
+.banner:hover::before,
+.banner:focus::before{
+    background: linear-gradient(180deg, rgba(12,18,28,0.08) 0%, rgba(12,18,28,0.18) 100%);
+}
+
+/* tipografia interna — títulos e descrições claros */
+.banner h2,
+.banner .title {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-shadow: 0 6px 18px rgba(2,6,12,0.6);
+}
+
+.banner p,
+.banner .subtitle {
+    margin: .5rem 0 0;
+    font-size: 1rem;
+    color: rgba(224,230,238,0.95);
+    max-width: 80%;
+    text-wrap: balance;
+}
+
+/* foco acessível (para navegação por teclado) */
+.banner:focus-visible{
+    outline: 3px solid rgba(83,98,113,0.18);
+    outline-offset: 6px;
+}
