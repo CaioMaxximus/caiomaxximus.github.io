@@ -1,4 +1,7 @@
 /* CSS HEX */
+
+
+/* using llm to generate a basic layout, adding my changes */
 :root {
 --rosy-granite: #84828fff;
 --dim-grey: #6a687aff;
@@ -9,12 +12,14 @@
 }
 
 body{
-    background-color: var(--deep-space-blue); /* fallback mais escuro no topo */
-    background-image: linear-gradient(to bottom,
+    background-color: var(--deep-space-blue); 
+    background-color: #080a0e; 
+    background:radial-gradient(circle at top, #19233a 0%, #050505 60%);
+     /* background-image: linear-gradient(to bottom,
         var(--deep-space-blue) 0%,
         var(--charcoal-blue) 25%,
-        var(--blue-slate) 55%,
-        rgba(143, 172, 209, 0.85) 85%);
+        var(--blue-slate) 35%
+        rgba(14, 17, 20, 0.85) 85%);  */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -33,7 +38,7 @@ h1{
     /* background-color: white; */
     width: 80%;
     margin: 0 auto;
-    margin-top: 2em;
+    /* margin-top: 0.5em; */
     padding-top: 4em;
     border-radius: 1%;
 }
@@ -44,12 +49,27 @@ h1{
     padding: 1em;
     border-radius: 5px;
     height: auto;
-    color: rgb(255, 255, 255);
+    color: rgb(230, 225, 225);
     text-align: center;
+    letter-spacing: 2px;
+    /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.356); */
+    /* text-shadow: 0 0 12px rgba(0,140,255,0.5); */
+
 
 }
 
+.main-banner h1{
+    font-size: 6rem;
+    /* text-shadow: 0 0 7px rgba(255, 208, 0, 0.685); */
+    text-shadow:
+        0 0 8px rgb(38, 25, 85)
 
+}
+.main-banner h2{
+    font-size: 2rem;
+    text-shadow: 0 0 6px rgb(37, 76, 102)
+
+}
 
 #presentation div{
     font-size: 1.5em;
@@ -58,7 +78,7 @@ h1{
 }
 
 #links_{
-    margin-top: 2em;
+    margin-top: 6em;
     display: flex ;
     flex-direction: row;
     justify-content: space-around;
@@ -98,7 +118,7 @@ h1{
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 16rem; /* responsivo e consistente */
+    min-height: 16rem; 
     padding: 2rem;
     border-radius: 12px;
     overflow: hidden;
@@ -106,9 +126,9 @@ h1{
     background-color: var(--deep-space-blue);
     box-shadow: 0 6px 18px rgba(10,14,28,0.45);
     transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, filter .22s ease;
-    cursor: pointer; /* deixa claro que é clicável */
+    cursor: pointer;
     text-align: center;
-    text-decoration: none; /* caso seja um <a> */
+    text-decoration: none; 
 }
 /* efeito extra para texto dentro dos banners */
 .banner .title,
@@ -151,7 +171,7 @@ h1{
 .banner:focus .title,
 .banner:hover h2,
 .banner:focus h2{
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px) scale(1.1);
     letter-spacing: .6px;
     text-shadow: 0 10px 30px rgba(12,18,28,0.5), 0 2px 6px rgba(60,100,140,0.18);
     color: transparent;
@@ -257,6 +277,7 @@ h1{
 .banner:focus{
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 18px 40px rgba(15,25,45,0.6);
+    box-shadow: 0 0 12px rgb(28, 57, 110);
     filter: brightness(1.03);
 }
 
@@ -289,4 +310,13 @@ h1{
 .banner:focus-visible{
     outline: 3px solid rgba(83,98,113,0.18);
     outline-offset: 6px;
+}
+
+.project-banner{
+    
+    position: relative;
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+    
 }
