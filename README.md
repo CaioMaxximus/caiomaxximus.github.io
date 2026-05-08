@@ -3,4 +3,4 @@
 This repository represents my portfolio web page
 
 ## STATUS:
-    -Currently making responsive
+    -Rebuilding design
