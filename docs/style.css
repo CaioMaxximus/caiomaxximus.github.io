@@ -42,6 +42,10 @@ h1{
     padding-top: 4em;
     border-radius: 1%;
 }
+#main-banner-container{
+    display: flex;
+    flex-direction: column;
+}
 
 .main-banner{
     /* background-color: var(--dim-grey); */
@@ -111,10 +115,10 @@ h1{
 
     /* margin-top: 3em; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem; 
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 
 }
 
@@ -123,7 +127,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 15rem;
     min-height: 16rem; 
     padding: 2rem;
     border-radius: 12px;
@@ -255,7 +259,7 @@ h1{
 #published-works{
     background-image:
         linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
-        url("assets/banner-contact.jpg");
+        url("assets/yi-liu-iWqQIp1vU7w-unsplash.jpg");
 }
 
 /* mantém a imagem visível com uma camada translúcida por cima; ao passar o mouse a camada afina para tornar a imagem mais vibrante */
@@ -325,4 +329,87 @@ h1{
     align-items:  center;
     justify-content: center;
     
+}
+
+/* data science part */
+
+
+#presentation-header{
+
+    position: sticky;
+    margin: 0 auto;
+    margin-top: 25vh;
+    top: 0;
+    width: 50vw;
+    /* padding: 10px; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(122, 122, 145);
+    opacity: 0;
+    animation: slideUp 1.8s ease-out forwards 1s;
+    z-index: 2
+}
+
+
+
+#presentation-header h1{
+    font-size: 6rem;
+    z-index: 2;
+
+
+}
+
+#projects_content{
+
+    position: relative;
+    max-width: 80%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 50vh;
+}
+
+#projects_list{
+
+
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap : 5rem
+}
+
+.project-banner{
+    width: 40%;
+    height: 25rem;
+    background-color: rgb(19, 19, 26);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(228, 226, 226);
+
+}
+
+.img-container{
+    width: 100%;
+    height: 80%;
+    margin: 0;
+}
+.project-banner img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
