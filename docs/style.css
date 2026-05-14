@@ -3,6 +3,9 @@ html {
     scroll-behavior: smooth;
 }
 
+a{
+    text-decoration: none;
+}
 
 /* using llm to generate a basic layout, adding my changes */
 :root {
@@ -131,6 +134,11 @@ h1{
     padding: 3em;
 }
 
+.img-profile{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
 #links_{
     margin-top: 6em;
     margin-bottom: 5rem;
@@ -171,6 +179,7 @@ h1{
 }
 #banners-area a{
     width: 100%;
+    text-decoration: none
 }
 
 .banner{
@@ -352,7 +361,7 @@ h1{
 /* efeito de destaque */
 .banner:hover,
 .banner:focus{
-    transform: translateY(-6px) scale(1.01);
+    transform: translateY(-6px) scale(1.1);
     box-shadow: 0 18px 40px rgba(15,25,45,0.6);
     box-shadow: 0 0 12px rgb(28, 57, 110);
     filter: brightness(1.03);
@@ -552,6 +561,8 @@ img{
 
     filter: brightness(1.1);
 }
+
+
 
 @keyframes slideUp {
   from {
