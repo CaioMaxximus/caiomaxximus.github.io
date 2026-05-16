@@ -61,7 +61,7 @@ h1{
 
 .content {
     /* background-color: white; */
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     /* margin-top: 0.5em; */
     padding-top: 4em;
@@ -584,11 +584,32 @@ img{
     justify-content: center;
     gap: 3rem;
     height: 25rem;
+    border: 2px solid transparent;
+    /* border-radius: 1%; */
+    transition: border-color 0.5s ease-in;
+    padding: 1rem;
 }
+.article-banner:hover{
+    border-color:  #909fc4;
+}
+
 
 .documents_content{
     margin-top: 15rem;
 }
+.article-description{
+
+    width: 65%;
+    flex-shrink: 0;
+}
+
+.article-description h2{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+
 @keyframes slideUp {
   from {
     opacity: 0;
