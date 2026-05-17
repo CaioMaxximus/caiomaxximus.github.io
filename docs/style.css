@@ -140,13 +140,16 @@ h1{
 }
 
 #links_{
-    margin-top: 6em;
-    margin-bottom: 5rem;
+
     display: flex ;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 50%;
+    margin-top: 6em;
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1rem;
 
 }
@@ -159,7 +162,7 @@ h1{
 }
 
 #banners-area{
-    max-width: 95%;
+    max-width: 80%;
     position: relative;
     background-color: rgb(12, 12, 17);
     padding: 1em;
@@ -290,7 +293,6 @@ h1{
         /* opacity: 1; */
     }
 }
-/* pequeno efeito de brilho animado que percorre o título ao passar o mouse */
 @keyframes sweepGlow {
     0% { filter: brightness(1); background-position: -60% 0; }
     50% { filter: brightness(1.08); background-position: 160% 0; }
@@ -304,7 +306,6 @@ h1{
     animation: sweepGlow 1.2s ease 1;
 }
 
-/* acessibilidade: mantém efeito também quando focado por teclado */
 .banner:focus-visible .title,
 .banner:focus-visible h2{
     outline: none;
@@ -316,7 +317,6 @@ h1{
     background-blend-mode: overlay;
 }
 
-/* exemplos de mapeamento: coloque os ids reais e os ficheiros corretos da pasta assets */
 #software-projects{
     background-image:
         linear-gradient(180deg, rgba(44,61,85,0.55), rgba(62,76,94,0.45)),
@@ -338,17 +338,15 @@ h1{
         url("assets/yi-liu-iWqQIp1vU7w-unsplash.jpg");
 }
 
-/* mantém a imagem visível com uma camada translúcida por cima; ao passar o mouse a camada afina para tornar a imagem mais vibrante */
 .banner::before{
-    opacity: 0.75; /* controla translucidez inicial */
+    opacity: 0.75; 
     transition: background .22s ease, opacity .22s ease;
 }
 .banner:hover::before,
 .banner:focus::before{
-    opacity: 0.12; /* imagem mais visível ao hover */
+    opacity: 0.12;
     color : black;
 }
-/* camada de overlay para melhorar legibilidade do texto e permitir efeito ao passar o mouse */
 .banner::before{
     content: "";
     position: absolute;
@@ -440,7 +438,7 @@ h1{
 .projects_content{
 
     position: relative;
-    max-width: 80%;
+    max-width: 70%;
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -471,6 +469,12 @@ h1{
     color: rgb(228, 226, 226);
 
 } */
+
+#software-container{
+    /* background: url("assets/web_background.jpg"); */
+    /* ba */
+    
+}
 
 .project-banner{
     width: 80%;
@@ -577,6 +581,14 @@ img{
 
 }
 
+#centification-container{
+    /* background-image: url("assets/certifications/background.jpg"); */
+    /* background-color: #ccd5e0;
+    padding: 5rem;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); */
+}
+
 .article-banner{
     width: 80%;
     display: flex;
@@ -595,7 +607,9 @@ img{
 
 
 .documents_content{
-    margin-top: 15rem;
+    /* margin-top: 15rem; */
+    width: 85%;
+    margin: 15rem auto;
 }
 .article-description{
 
@@ -607,6 +621,10 @@ img{
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2rem;
+}
+
+works-container{
+    margin-bottom: 10rem;
 }
 
 
