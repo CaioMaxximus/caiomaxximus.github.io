@@ -578,6 +578,10 @@ img{
 
     width: 40%;
     margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -611,16 +615,22 @@ img{
     width: 85%;
     margin: 15rem auto;
 }
-.article-description{
+.content-description{
 
     width: 65%;
     flex-shrink: 0;
 }
 
-.article-description h2{
+.content-description h2{
     text-align: center;
     margin-bottom: 3rem;
+    margin-left: 2rem;
     font-size: 2rem;
+}
+
+.content-description p{
+
+    margin-left: 2rem;
 }
 
 works-container{
