@@ -162,7 +162,7 @@ h1{
 }
 
 #banners-area{
-    max-width: 80%;
+    max-width: 70%;
     position: relative;
     background-color: rgb(12, 12, 17);
     padding: 1em;
@@ -396,14 +396,7 @@ h1{
     outline-offset: 6px;
 }
 
-.project-banner{
-    
-    position: relative;
-    display: flex;
-    align-items:  center;
-    justify-content: center;
-    
-}
+
 
 /* data science part */
 
@@ -498,6 +491,17 @@ h1{
     border-color 0.4s ease;
 }
 
+.project-banner .img-container{
+    width: 50%;
+}
+
+.project-banner a{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .description{
     transition:
         transform 0.1s ease,
@@ -522,15 +526,11 @@ h1{
     color: rgb(226, 147, 0);
 }
 
-.img-container{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
+
 img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .description{
     font-size: 1.3rem;
@@ -540,11 +540,14 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    margin: 0;
 }
 
 .img-container img{
     /* width: 220px; */
     border-radius: 20px;
+    
 
     transition:
         transform 0.35s ease,
