@@ -90,9 +90,9 @@ h1{
 }
 
 .main-banner h1{
-    font-size: 6rem;
+    font-size: 4.5rem;
     opacity: 0;
-    animation: slideUp 1.8s ease-out forwards 1s;
+    animation: slideUp 1.2s ease-out forwards 1s;
 
     /* text-shadow: 0 0 7px rgba
     (255, 208, 0, 0.685); */
@@ -102,9 +102,9 @@ h1{
 }
 .main-banner h2{
     opacity: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-shadow: 0 0 6px rgb(102, 96, 37);
-    animation: slideUp 1.8s ease-out forwards 1.5s;
+    animation: slideUp 1.4s ease-out forwards 1.5s;
 
 }
 
@@ -642,12 +642,29 @@ works-container{
 
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0%{
+        opacity: 0;
+        transform:
+            translateY(60px)
+            scale(0.96);
+        letter-spacing: 0.4rem;
+        filter: blur(12px);
+    }
+
+    60%{
+        opacity: 1;
+        transform:
+            translateY(-6px)
+            scale(1.01);
+        filter: blur(0);
+    }
+
+    100%{
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+        letter-spacing: normal;
+        filter: blur(0);
+    }
 }
