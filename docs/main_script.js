@@ -14,15 +14,26 @@ function Certification(title, image, link){
 
 const software_projects = [
     new Project("Onion PY",
-        "A anonymus chat over the tor network buiil completely in python",
+        `
+            Writing a anonymus message chat to host and connect over the Tor network in python using a graphic static library as interface
+
+                - Use threads to separate events loops from UI interface to application domain
+                - Use asynchronus techiniques to isolate responsabilities from each application layer
+                - Asynchonus queues and event bus allow a fluid operation and strong arquitetural componetization 
+        `,
         "assets/software_projects/logo_onio_py.png", ""
     ),
-    new Project("todo_list_python",
-        "A fluid task manager buid in Pyhton using tikinter library, using asynchounus techiniques",
+    new Project("ToDo list in python",
+        `A fluid task manager build in Pyhton using tikinter library, using asynchounus techiniques
+            - Experimenting the combination of different event loops to build a responsive view
+            - Callback driven architecture`,
         "", ""
     ),
     new Project("Snake Game - Vanilla JS",
-        "Using vanilla js to experiment Doom and timed events",
+    `Using vanilla js to build a snake game with pure javascript 
+        - Controling DOOM and promises manipulation
+        - Working with Doom manipulation and timed events
+    `,
         "", ""
     )
 

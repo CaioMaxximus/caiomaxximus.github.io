@@ -92,7 +92,7 @@ h1{
 .main-banner h1{
     font-size: 4.5rem;
     opacity: 0;
-    animation: slideUp 1.2s ease-out forwards 1s;
+    animation: slideUp 0.8s ease-out forwards 1s;
 
     /* text-shadow: 0 0 7px rgba
     (255, 208, 0, 0.685); */
@@ -104,7 +104,7 @@ h1{
     opacity: 0;
     font-size: 2rem;
     text-shadow: 0 0 6px rgb(102, 96, 37);
-    animation: slideUp 1.4s ease-out forwards 1.5s;
+    animation: slideUp 1s normal forwards 1.5s;
 
 }
 
@@ -119,6 +119,11 @@ h1{
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
+    animation-timeline: view();
+  
+  /* Define que a animação deve acontecer quando o elemento entrar na tela */
+    animation-range: entry 10% cover 50%;
+
 
 }
 #about .img-container{
@@ -145,12 +150,13 @@ h1{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 40%;
     margin-top: 6em;
     margin-bottom: 5rem;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
+    /* animation-timeline: view(); */
 
 }
 
@@ -162,7 +168,7 @@ h1{
 }
 
 #banners-area{
-    max-width: 70%;
+    max-width: 60%;
     position: relative;
     background-color: rgb(12, 12, 17);
     padding: 1em;
@@ -192,7 +198,7 @@ h1{
     justify-content: center;
     /* width: 15rem; */
     width: 100%;
-    min-height: 16rem; 
+    min-height: 14em; 
     /* padding: 2rem; */
     border-radius: 12px;
     overflow: hidden;
@@ -221,6 +227,7 @@ h1{
         color .32s ease;
     will-change: transform, opacity, text-shadow;
 }
+
 
 /* linha animada sob o título */
 .banner .title::after,
@@ -375,7 +382,7 @@ h1{
 .banner h2,
 .banner .title {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.2em;
     line-height: 1.1;
     font-weight: 700;
     text-shadow: 0 6px 18px rgba(2,6,12,0.6);
@@ -384,7 +391,7 @@ h1{
 .banner p,
 .banner .subtitle {
     margin: .5rem 0 0;
-    font-size: 1rem;
+    font-size: 1.5em;
     color: rgba(224,230,238,0.95);
     max-width: 80%;
     text-wrap: balance;
@@ -483,11 +490,11 @@ h1{
     display: flex;
     flex-direction: row;
     align-items: center ;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 2rem;
     text-align: justify;
     transition:
-    transform 0.25s ease,
+    transform 0.35s ease,
     border-color 0.4s ease;
 }
 
@@ -506,18 +513,19 @@ h1{
     transition:
         transform 0.1s ease,
         color 0.3s ease;
+   
 }
 
 /* HOVER */
 
 .project-banner:hover{
-    transform: scale(1.04);
-    border: 1px solid;
-    border-color: rgb(255, 252, 59);
+    transform: scale(1.06);
+    /* border: 1px solid; */
+    /* border-color: rgb(255, 252, 59); */
 
     border-radius: 8px;
-    /* background-color: rgb(48, 40, 85);
-        backdrop-filter: blur(12px); */
+    /* background-color: rgb(48, 40, 85); */
+        backdrop-filter: blur(12px);
 
 }
 
@@ -622,13 +630,15 @@ img{
 
     width: 65%;
     flex-shrink: 0;
+    white-space: pre-line;
+    color: #f8fbff;
 }
 
 .content-description h2{
     text-align: center;
-    margin-bottom: 3rem;
-    margin-left: 2rem;
-    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    /* margin-left: 2rem; */
+    font-size: 1.5rem;
 }
 
 .content-description p{
@@ -645,18 +655,27 @@ works-container{
     0%{
         opacity: 0;
         transform:
-            translateY(60px)
+            /* translateY(10px) */
             scale(0.96);
-        letter-spacing: 0.4rem;
-        filter: blur(12px);
+            
+        letter-spacing: 0.8rem;
+        filter: blur(22px);
     }
 
-    60%{
+    45%{
         opacity: 1;
         transform:
-            translateY(-6px)
+            /* translateY(-6px) */
             scale(1.01);
-        filter: blur(0);
+        filter: blur(5px);
+    }
+    75%{
+        opacity: 1;
+        transform:
+            /* translateY(-6px) */
+            scale(1);
+        filter: blur(0px);
+        border-bottom: #a8b81f;
     }
 
     100%{
