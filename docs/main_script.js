@@ -1,8 +1,9 @@
-function Project(title, description, image, link) {
+function Project(title, description, image, link,tags = []) {
     this.title = title
     this.description = description
     this.image = image
     this.link = link
+    this.tags = tags
 }
 
 function Certification(title, image, link){
@@ -21,21 +22,15 @@ const software_projects = [
                 - Use asynchronus techiniques to isolate responsabilities from each application layer
                 - Asynchonus queues and event bus allow a fluid operation and strong arquitetural componetization 
         `,
-        "assets/software_projects/logo_onio_py.png", ""
+        "assets/software_projects/logo_onio_py.png", "" ,["Python" ,"Tor" , "TCP/Server" ,"P2P"]
     ),
-    new Project("ToDo list in python",
-        `A fluid task manager build in Pyhton using tikinter library, using asynchounus techiniques
-            - Experimenting the combination of different event loops to build a responsive view
-            - Callback driven architecture`,
-        "", ""
-    ),
-    new Project("Snake Game - Vanilla JS",
-    `Using vanilla js to build a snake game with pure javascript 
-        - Controling DOOM and promises manipulation
-        - Working with Doom manipulation and timed events
-    `,
-        "", ""
+    new Project("Quote Frame ",
+        `
+            A web application that combines FastAPI with NLP to return a random quote
+             and a thematically associated photograph with each iteration.
+        `
     )
+    
 
 ];
 
@@ -78,6 +73,11 @@ function build_soft_projects(){
                                 <p>${p.description}</p>
                             </div></a>
                     </div>
+                <div class="proj-tags">
+            ${p.tags.map(e => `<span>${e}</span>`).join('')}
+                </div>
+
+
         `
 
     });
@@ -120,6 +120,7 @@ function build_certifications(){
                             <h2> ${p.title}</h2>
                         </div>
                     </div>
+            
         `
 
     });

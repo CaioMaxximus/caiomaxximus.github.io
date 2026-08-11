@@ -15,21 +15,16 @@ a{
 --charcoal-blue: #3e4c5eff;
 --deep-space-blue: #2c3d55ff;
 --white-space: #e0e6ee;
+--neon-green : rgb(0 255 153/var(--tw-text-opacity,1));
 }
 
 body{
-    /* background-color: var(--deep-space-blue);  */
-    /* background-color: #080a0e;  */
+
     
     background:radial-gradient(circle at top, #19233a 0%, #050505 60%);
 
-     /* background-image: linear-gradient(to bottom,
-        var(--deep-space-blue) 0%,
-        var(--charcoal-blue) 25%,
-        var(--blue-slate) 35%
-        rgba(14, 17, 20, 0.85) 85%);  */
+
     background-repeat: no-repeat;
-    /* animation: surgimento 2s ease-in forwards; */
     background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
@@ -37,18 +32,32 @@ body{
     color: var(--white-space);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Inter', sans-serif;
 }
+
 h1{
     font-size: 4em;
 }
+h1, h2{
+        color: var(--neon-green);
+        -webkit-text-stroke: 1px #030303; 
+        font-family: Fira Code, monospace;
+
+
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
 
 #jump-home{
     position: fixed;
 
     bottom: 30px;
     right: 30px;
-
     width: 60px;
     height: 60px;
 
@@ -58,6 +67,19 @@ h1{
 
     cursor: pointer;
 }
+
+.blur-top-effect{
+
+    
+    background: rgba(255, 255, 255, 0.13); 
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);   
+
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
 
 .content {
     /* background-color: white; */
@@ -72,20 +94,23 @@ h1{
     flex-direction: column;
 }
 
+
 .main-banner{
     /* background-color: var(--dim-grey); */
     margin: 0 1em;
+    margin-top: 2em;
     /* margin-top: 2rem; */
     padding: 1em;
     border-radius: 5px;
     /* height: auto; */
-    color: rgb(230, 225, 225);
     text-align: center;
     letter-spacing: 2px;
     
     position: sticky;
     top : 0;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
 
 }
 
@@ -93,7 +118,7 @@ h1{
     font-size: 4.5rem;
     opacity: 0;
     animation: slideUp 0.8s ease-out forwards 1s;
-
+    width: auto;
     /* text-shadow: 0 0 7px rgba
     (255, 208, 0, 0.685); */
     text-shadow:
@@ -120,17 +145,22 @@ h1{
     align-items: center;
     font-size: 1.5rem;
     animation-timeline: view();
-  
-  /* Define que a animação deve acontecer quando o elemento entrar na tela */
     animation-range: entry 10% cover 50%;
 
-
 }
-#about .img-container{
+
+.img-profile{
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
-    overflow: hidden
+    overflow: hidden;
+    border: 1px solid var(--neon-green);
+}
 
-
+.img-profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #presentation div{
@@ -139,10 +169,7 @@ h1{
     padding: 3em;
 }
 
-.img-profile{
-    border-radius: 50%;
-    overflow: hidden;
-}
+
 
 #links_{
 
@@ -210,7 +237,6 @@ h1{
     text-align: center;
     text-decoration: none; 
 }
-/* efeito extra para texto dentro dos banners */
 .banner .title,
 .banner h2,
 .banner .subtitle,
@@ -229,7 +255,6 @@ h1{
 }
 
 
-/* linha animada sob o título */
 .banner .title::after,
 .banner h2::after{
     content: "";
@@ -247,7 +272,6 @@ h1{
     pointer-events: none;
 }
 
-/* estado hover/focus: texto sobe, ganha brilho e gradiente */
 .banner:hover .title,
 .banner:focus .title,
 .banner:hover h2,
@@ -261,7 +285,6 @@ h1{
     background-clip: text;
 }
 
-/* revelar a linha animada */
 .banner:hover .title::after,
 .banner:focus .title::after,
 .banner:hover h2::after,
@@ -270,7 +293,6 @@ h1{
     opacity: 1;
 }
 
-/* subtítulo / parágrafo: sobe com leve atraso e ganha opacidade */
 .banner .subtitle,
 .banner p{
     transform: translateY(0);
@@ -363,7 +385,6 @@ h1{
     pointer-events: none;
 }
 
-/* efeito de destaque */
 .banner:hover,
 .banner:focus{
     transform: translateY(-6px) scale(1.1);
@@ -372,13 +393,11 @@ h1{
     filter: brightness(1.03);
 }
 
-/* suaviza overlay ao passar o mouse para deixar o conteúdo mais vibrante */
 .banner:hover::before,
 .banner:focus::before{
     background: linear-gradient(180deg, rgba(12,18,28,0.08) 0%, rgba(12,18,28,0.18) 100%);
 }
 
-/* tipografia interna — títulos e descrições claros */
 .banner h2,
 .banner .title {
     margin: 0;
@@ -397,7 +416,6 @@ h1{
     text-wrap: balance;
 }
 
-/* foco acessível (para navegação por teclado) */
 .banner:focus-visible{
     outline: 3px solid rgba(83,98,113,0.18);
     outline-offset: 6px;
@@ -459,39 +477,20 @@ h1{
     justify-content: center;
 }
 
-/* .project-banner{
-    width: 80%;
-    height: 25rem;
-    background-color: rgb(19, 19, 26);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    color: rgb(228, 226, 226);
 
-} */
-
-#software-container{
-    /* background: url("assets/web_background.jpg"); */
-    /* ba */
-    
-}
 
 .project-banner{
+    
+    
+    display: grid;
     width: 80%;
     height: 20rem;
+    grid-template-columns: 30% 1fr; 
+    
+    /* margin-top: 30rem; */
+    align-items: center;     
+    justify-items: center;    
 
-    /* background:
-    rgba(255,255,255,0.08); */
-    padding: 1rem;
-    /* border:
-    2px solid rgba(255,255,255,0.12); */
-
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center ;
-    justify-content: space-between;
-    gap: 2rem;
     text-align: justify;
     transition:
     transform 0.35s ease,
@@ -499,13 +498,20 @@ h1{
 }
 
 .project-banner .img-container{
-    width: 50%;
+    /* width: 50%; */
+    min-width: 0;
+}
+.project-banner .img-container img{
+    max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .project-banner a{
-    width: 50%;
+    /* width: 50%; */
     align-items: center;
     justify-content: center;
+    min-width: 0;
 }
 
 
@@ -535,26 +541,21 @@ h1{
 }
 
 
-img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
 .description{
     font-size: 1.3rem;
 }
 
 .img-container{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    align-items: center;
-    height: 100%;
+    align-items: center; 
+    /* height: 100%; */
     margin: 0;
 }
 
 .img-container img{
     /* width: 220px; */
-    border-radius: 20px;
+    border-radius: 1rem;
     
 
     transition:
@@ -577,6 +578,64 @@ img{
     filter: brightness(1.1);
 }
 
+.proj-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+    color: #765ee4;
+
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(118, 94, 228, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.proj-tags:hover {
+    background: rgba(95, 75, 185, 0.15);
+    border-color: #00ffcc;
+    
+    box-shadow: 0 0 15px rgba(0, 255, 221, 0.425),
+                inset 0 0 10px rgba(0, 255, 204, 0.2);
+    
+    transform: translateY(-3px);
+}
+
+.proj-tags::before, .main-banner h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(0, 255, 204, 0.4), 
+        transparent
+    );
+    transition: left 0.5s ease;
+    z-index: 5;
+}
+
+.proj-tags:hover::before{
+    left: 100%; 
+}
+
+.proj-tags span {
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+
+
 .grid_list{
 
     display: flex;
@@ -584,6 +643,12 @@ img{
     margin-top: 30rem;
     align-items: center;
     justify-content: center;
+    grid-template-columns: 30% 1fr; 
+
+    margin-top: 30rem;
+    
+    align-items: center;       
+    justify-items: center;    
 }
 .grid_list .documents-banner{
 
@@ -596,13 +661,6 @@ img{
 
 }
 
-#centification-container{
-    /* background-image: url("assets/certifications/background.jpg"); */
-    /* background-color: #ccd5e0;
-    padding: 5rem;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); */
-}
 
 .article-banner{
     width: 80%;
@@ -628,7 +686,7 @@ img{
 }
 .content-description{
 
-    width: 65%;
+    /* width: 65%; */
     flex-shrink: 0;
     white-space: pre-line;
     color: #f8fbff;
