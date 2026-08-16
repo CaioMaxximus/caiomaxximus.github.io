@@ -194,6 +194,12 @@ img{
     align-items: center;
 }
 
+#links_ a{
+    text-decoration: none;
+    color: var(--neon-green)
+
+}
+
 #banners-area{
     max-width: 60%;
     position: relative;
@@ -213,6 +219,7 @@ img{
     justify-content: space-evenly;
 
 }
+
 #banners-area a{
     width: 100%;
     text-decoration: none
@@ -498,7 +505,7 @@ img{
 }
 
 .project-banner .img-container{
-    /* width: 50%; */
+    width: 70%;
     min-width: 0;
 }
 .project-banner .img-container img{
