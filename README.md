@@ -3,5 +3,5 @@
 This is my portfolio webpage
 
 ## STATUS:
-    -Finshing design
     - Adding new projects
+    - Adding effects
